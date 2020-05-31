@@ -23,7 +23,7 @@ class DBConnection {
 
     public function connect()
     {
-        $connection = mysqli_connect($this->host,$this->username,$this->password,$this->database,$this->port);
+        $connection = new PDO("mysql:host=".$this->host.";port=".$this->port.";dbname=".$this->database, $this->username, $this->password);
 
         return $connection;
     }

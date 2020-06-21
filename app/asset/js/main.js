@@ -7,3 +7,8 @@ $(document).ready(function() {
         outDuration: 400
     });
 });
+
+function confirmDeleteUser() {
+    var href = '/app/user/deleteUser.php';
+    window.location = href;
+}

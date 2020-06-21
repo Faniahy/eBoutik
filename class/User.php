@@ -5,7 +5,7 @@
  * Date: 5/22/20
  * Time: 8:03 PM
  */
-class User implements Crud
+class User
 {
     private $id_user;
     private $nom;
@@ -78,12 +78,13 @@ class User implements Crud
         $this->email = $email;
     }
 
-    public function create()
+    public static function create(User $user)
     {
-        // TODO: Implement create() method.
+        $sql = "insert into user(nom , prenom , email) values ('".$user->getNom()."','".$user->getPrenom()."','".$user->getEmail()."')";
+        return $sql;
     }
 
-    public function update($id)
+    public function update(User $user)
     {
         // TODO: Implement update() method.
     }

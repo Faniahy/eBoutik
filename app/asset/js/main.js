@@ -8,9 +8,8 @@ $(document).ready(function() {
     });
 });
 
-function confirmDeleteUser(id_user) {
+function confirmDeleteUser(elm,id_user) {
     var href = '/app/user/deleteUser.php';
-
     $.confirm({
       title: 'Confirmation!',
       content: 'Vous voulez vraiment supprimer?',
@@ -30,7 +29,9 @@ function confirmDeleteUser(id_user) {
                       type: 'DELETE',
                       url: href + '/?id_user='+id_user,
                       success: function (result) {
-                          window.location = '/app/user/listUser.php';
+                          //window.location = '/app/user/listUser.php';
+                          toastr.success('<b>L\'utilisateur a été supprimer!</b>');
+                          elm.closest('tr').remove();
                       }
                   });
               }

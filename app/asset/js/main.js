@@ -10,7 +10,7 @@ $(document).ready(function() {
 
 function confirmDeleteUser(id_user) {
     var href = '/app/user/deleteUser.php';
-    //window.location = href;
+
     $.confirm({
       title: 'Confirmation!',
       content: 'Vous voulez vraiment supprimer?',
@@ -20,6 +20,7 @@ function confirmDeleteUser(id_user) {
       animation: 'scale',
       type: 'red',
       columnClass: 'col s4 offset-s4',
+      draggable: true,
       buttons: {
           valider: {
               text: 'OK',

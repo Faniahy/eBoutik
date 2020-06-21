@@ -1,9 +1,15 @@
 <?php
 require('../../boot.php');
 
-/*$îd_user = $POST['id_user'];
+$id_user = $_GET['id_user'];
 
 if(isset($id_user)) {
+    $delete_user = User::delete($id_user);
 
-}*/
-echo 'Delete User';
+    $statement = $obj_pdo->prepare($delete_user);
+    $statement->execute();
+
+    if($result) {
+        return true;
+    }
+}

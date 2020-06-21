@@ -8,7 +8,14 @@ $(document).ready(function() {
     });
 });
 
-function confirmDeleteUser() {
+function confirmDeleteUser(id_user) {
     var href = '/app/user/deleteUser.php';
-    window.location = href;
+    //window.location = href;
+    $.ajax({
+        type: 'DELETE',
+        url: href + '/?id_user='+id_user,
+        success: function (result) {
+            window.location = '/app/user/listUser.php';
+        }
+    });
 }

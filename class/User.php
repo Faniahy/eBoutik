@@ -89,14 +89,15 @@ class User
         // TODO: Implement update() method.
     }
 
-    public function delete($id)
+    public function delete($id_user)
     {
-        // TODO: Implement delete() method.
+        $sql = "delete from user where id_user = ".$id_user;
+        return $sql;
     }
 
-    public function get($id)
+    public function get($id_user)
     {
-        // TODO: Implement get() method.
+        $sql = "select u.* from user as u where id_user = ".$id_user;
     }
 
     public static function getAll()

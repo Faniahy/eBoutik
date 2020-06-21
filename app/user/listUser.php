@@ -36,7 +36,7 @@ $result = $statement->fetchAll(PDO::FETCH_CLASS, "user");
                     "<td>".$res->getIdUser()."</td>".
                     "<td>".$res->getNom()." ".$res->getPreNom()."</td>".
                     "<td>".$res->getEmail()."</td>".
-                    "<td><button id='btn_edit_user".$res->getIdUser()."' class='btn-small waves-effect waves-light orange darken-3' style='margin-right: 5px;'><i class='material-icons'>edit</i></button><button id='btn_delete_user".$res->getIdUser()."' onclick='javascript:confirmDeleteUser()' class='btn-small waves-effect waves-light red darken-3'><i class='material-icons'>delete</i></button></td>".
+                    "<td><button id='btn_edit_user".$res->getIdUser()."' class='btn-small waves-effect waves-light orange darken-3' style='margin-right: 5px;'><i class='material-icons'>edit</i></button><button id='btn_delete_user".$res->getIdUser()."' onclick='javascript:confirmDeleteUser(".$res->getIdUser().")' class='btn-small waves-effect waves-light red darken-3'><i class='material-icons'>delete</i></button></td>".
                     "</tr>";
             }
             echo $string;

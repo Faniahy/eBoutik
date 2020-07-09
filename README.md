@@ -1,6 +1,6 @@
 Hello Everybody!
 
-This is an application to manage user in application site.
+This is an application to manage user an create online shop for sale products in application site.
 
 Clone and use it!
 

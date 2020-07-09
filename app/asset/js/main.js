@@ -8,6 +8,24 @@ $(document).ready(function() {
     });
 });
 
+toastr.options = {
+  "closeButton": false,
+  "debug": false,
+  "newestOnTop": false,
+  "progressBar": false,
+  "positionClass": "toast-top-right",
+  "preventDuplicates": false,
+  "onclick": null,
+  "showDuration": "300",
+  "hideDuration": "1000",
+  "timeOut": "5000",
+  "extendedTimeOut": "1000",
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "fadeIn",
+  "hideMethod": "fadeOut"
+}
+
 function confirmDeleteUser(elm,id_user) {
     var href = '/app/user/deleteUser.php';
     $.confirm({
@@ -29,7 +47,6 @@ function confirmDeleteUser(elm,id_user) {
                       type: 'DELETE',
                       url: href + '/?id_user='+id_user,
                       success: function (result) {
-                          //window.location = '/app/user/listUser.php';
                           toastr.success('<b>L\'utilisateur a été supprimer!</b>');
                           elm.closest('tr').remove();
                       }
